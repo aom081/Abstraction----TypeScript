@@ -4,14 +4,16 @@ import { PartTimeEmployee } from "./PartTimeEmployee";
 import { Shape } from "./Shape";
 import { Rectangle } from "./Rectangle";
 import { Circle } from "./Circle";
-import { Color } from "./Color";
 import { Cat } from "./Cat";
 import { Dog } from "./Dog";
-import { Animal } from "./Animal";
 import { TV } from "./TV";
 import { Radio } from "./Radio";
 import { PayPalPayment } from "./PayPalPayment";
 import { CreditCardPayment } from "./CreditCardPayment";
+import { Car } from "./Car";
+import { Motorcycle } from "./Motorcycle";
+import { FlyingCar } from "./Car";
+import { ElectricMotorcycle } from "./Motorcycle";
 
 const emp = new FullTimeEmployee("John", 50000);
 console.log("-----------------Full Time Employee-----------------");
@@ -28,13 +30,13 @@ console.log("----------------Rectangle----------------");
 console.log("Area: ", rect.getArea());
 console.log("Perimeter: ", rect.getPerimeter());
 console.log("Color: ", rect.getColor());
-console.log("draw: ", rect.draw());
+rect.draw();
 
 const circle = new Circle(10);
 console.log("-----------------Circle-----------------");
 console.log("Area: ", circle.getArea());
 console.log("Perimeter: ", circle.getPerimeter());
-console.log("draw: ", circle.draw());
+circle.draw();
 
 console.log("-----------------Animal-----------------");
 const dog = new Dog();
@@ -66,3 +68,30 @@ paypal.pay(100);
 const creditCard = new CreditCardPayment(644259014);
 console.log("--------------- Credit Card Payment ----------------");
 creditCard.pay(200);
+
+console.log("-----------------Vehicle-----------------");
+console.log("--------------- Car ----------------");
+const car = new Car("Toyota", "Corolla");
+console.log(car.getDetails());
+car.startEngine();
+car.stopEngine();
+
+console.log("--------------- Motorcycle ----------------");
+const motorcycle = new Motorcycle("Honda", "CBR");
+console.log(motorcycle.getDetails());
+motorcycle.startEngine();
+motorcycle.stopEngine();
+
+console.log("--------------- Flying Car ----------------");
+const flyingCar = new FlyingCar("Tesla", "Model F");
+console.log(flyingCar.getDetails());
+flyingCar.startEngine();
+flyingCar.fly();
+flyingCar.stopEngine();
+
+console.log("-----------------Electric Vehicle-----------------");
+const electricMotorcycle = new ElectricMotorcycle("Zero", "SR/F");
+console.log(electricMotorcycle.getDetails());
+electricMotorcycle.startEngine();
+electricMotorcycle.chargeBattery();
+electricMotorcycle.stopEngine();
